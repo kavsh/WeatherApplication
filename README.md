@@ -15,11 +15,15 @@ React Native, Expo, Styled-Components, TypeScript, Redux, Saga.
 - Open a terminal in your editor and run `npm install`
 - Run `npm start`
 - Choose how to open the app:
-  Press a │ open Android
-  Press i │ open iOS simulator
-  Press w │ open web
-  Press r │ reload app
-  Press m │ toggle menu
+  > Press a │ open Android
+  
+  > Press i │ open iOS simulator
+  
+  > Press w │ open web
+  
+  > Press r │ reload app
+  
+  > Press m │ toggle menu
 
 
 
