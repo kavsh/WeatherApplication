@@ -1,9 +1,9 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
 import {UPDATE_ERROR, UPDATE_WEATHER_LIST} from "../actions/actions";
-import config from "../config";
+import config from "../../config";
 import axios from 'axios';
 const getWeatherData = (cityName) => {
-     return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=${config.API_KEY}`)
+     return axios.get(`${config.URL}${cityName}&units=metric&APPID=${config.API_KEY}`)
         .then(data => {
             return data;
         })
