@@ -1,6 +1,6 @@
 # WeatherApplication
 
-React Native, Expo, Styled-Components, Redux, Saga.
+React Native, Expo, Styled-Components, TypeScript, Redux, Saga.
 
 
 ## How To Run The App in browser
@@ -21,3 +21,5 @@ React Native, Expo, Styled-Components, Redux, Saga.
 - Empty search field after click on search button.
 - Display a massage if the application could not find any city.
 - Add a functionality to add favorit weather.
+- Update unitests with more tests.
+- Upgrade to latest React-Native,...
