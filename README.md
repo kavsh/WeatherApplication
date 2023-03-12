@@ -3,7 +3,7 @@
 React Native, Expo, Styled-Components, TypeScript, Redux, Saga.
 
 
-## How To Run The App in browser
+## How To Run The App
 
 #### Step 1:
 - Get a API_KEY from https://openweathermap.org/ (you might need to register).
@@ -13,7 +13,14 @@ React Native, Expo, Styled-Components, TypeScript, Redux, Saga.
 - Open it in your favorite editor
 - Replace API_KEY in config.js by your new API_KEY from step 1.
 - Open a terminal in your editor and run `npm install`
-- run `npm start`
+- Run `npm start`
+- Choose how to open the app:
+  Press a │ open Android
+  Press i │ open iOS simulator
+  Press w │ open web
+  Press r │ reload app
+  Press m │ toggle menu
+
 
 
 ## TO DO 
