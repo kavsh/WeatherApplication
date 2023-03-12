@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components/native";
 import CitySearch from "./CitySearch";
 import CityWeather from "./CityWeather";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import backgroundImg from "../../assets/backgroundImg.png";
 import {ImageBackground, ScrollView} from "react-native";
+import {GET_WEATHER} from "../actions/actions";
 
 const MainWeather = () => {
     const [city, setCity] = useState("");
     const weathers = useSelector(state => state.weather);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(GET_WEATHER("London"));
+        dispatch(GET_WEATHER("Stockholm"));
+    },[]);
 
     return (
         <Container>

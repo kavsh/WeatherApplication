@@ -1,4 +1,4 @@
-import { takeLatest, put, call } from 'redux-saga/effects';
+import { takeEvery, put, call } from 'redux-saga/effects';
 import {UPDATE_ERROR, UPDATE_WEATHER_LIST} from "../actions/actions";
 import config from "../../config";
 import axios from 'axios';
@@ -22,5 +22,5 @@ function* fetchLatLongHandler(action) {
 };
 
 export function* getWeatherSage() {
-    yield takeLatest('GET_WEATHER', fetchLatLongHandler);
+    yield takeEvery('GET_WEATHER', fetchLatLongHandler);
 };
