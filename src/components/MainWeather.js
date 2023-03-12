@@ -23,7 +23,7 @@ const MainWeather = () => {
                     city={city}
                     setCity={setCity}
                 />
-                <ScrollView contentContainerStyle={{flexGrow: 1}} style={{flex: 1}}>
+                <ScrollView contentContainerStyle={{flexGrow: 1}} style={{flex: 3}}>
                     <FutureForecastContainer>
                         {weathers.map((city, index) => {
                             return <CityWeather key={index} city={city}/>;

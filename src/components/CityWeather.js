@@ -9,33 +9,29 @@ const CityWeather = ({ city }) => {
     const sunset = moment.utc(city.sys.sunset, 'X').add(timezone, 'seconds').format('HH:mm a');
 
     return (
-        <>
         <DayContainer>
-            <Title>
+            <DateContainer>
                 <Title>
                     {city.name}
                 </Title>
-            </Title>
-            <DateContainer>
                 <WeekDay>{moment(city.dt * 1000).format("ddd")}</WeekDay>
             </DateContainer>
             <DegreeView>
                 <Degree>{Math.round(city.main.temp)}°C</Degree>
+                <WeatherIcon style={{display: 'inline-block', width: '50%', marginLeft: '20px'}}
+                             source={{
+                                 uri: `http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`,
+                             }}
+                             resizeMode={"contain"}
+                />
                 <FeelsLike>Feels {Math.round(city.main.feels_like)}°C</FeelsLike>
             </DegreeView>
             <IconTempView>
-                <WeatherIcon
-                    source={{
-                        uri: `http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`,
-                    }}
-                    resizeMode={"contain"}
-                />
-
-                <Text>Sunrise: {sunrise} {'\n'}</Text>
-                <Text>sunset: {sunset} {'\n'}</Text>
+                <Text style={{float: 'left'}}>Sunrise: {sunrise}</Text>
+                <Text style={{float: 'right'}}>sunset: {sunset}</Text>
             </IconTempView>
         </DayContainer>
-            </>
+
     );
 };
 
@@ -44,31 +40,26 @@ const DayContainer = styled.View`
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   margin: 10px;
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
   align-items: center;
   justify-content: space-evenly;
   width: 95%;
-  max-width: 478px;
 `;
 
 const DateContainer = styled.View`
-  text-align: right;
-  flex: 1;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 10px;
 `;
 
 const WeekDay = styled.Text`
   font-size: 16px;
-  text-align: center;
+  float: right;
 `;
 
 const IconTempView = styled.View`
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: left;
-  flex: 2;
+  width: 100%;
+  display: inline-block;
 `;
 
 const WeatherIcon = styled.Image`
@@ -77,16 +68,19 @@ const WeatherIcon = styled.Image`
 `;
 
 const DegreeView = styled.View`
-  text-align: center;
-  flex: 1;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
 `;
 
 const Degree = styled.Text`
   font-size: 24px;
+  float: left;
 `;
 
 const FeelsLike = styled.Text`
   font-size: 14px;
+  float: right;
 `;
 
 const Title = styled.Text`
